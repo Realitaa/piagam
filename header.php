@@ -50,6 +50,7 @@ include "koneksi.php";
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="tambah_data.php">Tambah Instansi</a></li>
+            <li><a href="tambah_admin.php">Tambah Admin</a></li>
             <li><a href="data_piagam.php">Piagam</a></li>
             <li><a href="scanner.php">Validasi Piagam</a></li>
             <li><a href="logout.php">Keluar</a></li>
