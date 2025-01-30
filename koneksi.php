@@ -1,6 +1,6 @@
 <?php
 //variabel koneksi
-$konek = mysqli_connect("localhost","bikm9652_aset","Elang!ok","bikm9652_qrpiagam");
+$konek = mysqli_connect("localhost","root","","qrpiagam");
 
 if(!$konek){
 	echo "Koneksi Database Gagal...!!!";
