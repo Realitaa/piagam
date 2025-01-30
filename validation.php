@@ -2,9 +2,12 @@
 session_start();
 include "koneksi.php"; // Pastikan koneksi database sudah benar
 
+// Pastikan tidak ada output sebelum header (misalnya, spasi kosong atau echo sebelumnya)
+ob_start(); // Mulai output buffering untuk menangani header yang lebih baik
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user = trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING));
-    $pass = trim($_POST['password']); // Password tidak boleh difilter secara ketat sebelum hash
+    $user = trim($_POST['username']);
+    $pass = trim($_POST['password']); // Password tidak perlu difilter, tetap aman
 
     if (empty($user) || empty($pass)) {
         header("Location: login.php?error=Form Belum Lengkap!!");
@@ -37,4 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: login.php");
     exit();
 }
+
+ob_end_flush(); // Pastikan output buffering berakhir dan output dikirim
 ?>
