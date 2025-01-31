@@ -1,5 +1,11 @@
 <?php
     include "koneksi.php";
+    ob_start();
+    if (!isset($_SESSION['login'])) {
+        echo '<link rel="stylesheet" href="watermark.css">';
+    } else {
+        $style = ''; 
+    }
 ?>
 
     <!DOCTYPE html>
@@ -114,26 +120,6 @@
     }
         </style>
     </head>
-
-    <?php 
- if (!isset($_SESSION['login'])) : ?>
-    <style>
-        .container::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-15deg); /* Tambahkan rotasi */
-            background: url('/assets/img/valid-stemp.png') no-repeat center center;
-            background-size: 678px 255px; /* Ukuran watermark */
-            opacity: 0.5; /* Transparansi watermark */
-            width: 678px; /* Sama seperti background-size */
-            height: 255px; /* Sama seperti background-size */
-            z-index: 0; /* Letakkan di belakang konten */
-        }
-    </style>
-<?php endif; ?>
-
 
     <body>
         <div class="container">

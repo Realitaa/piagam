@@ -1,4 +1,5 @@
 <?php
+session_start();
 //variabel koneksi
 $konek = mysqli_connect("localhost","root","","qrpiagam");
 
