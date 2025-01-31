@@ -115,8 +115,7 @@
         </style>
     </head>
 
-    <?php ob_start();
-session_start();
+    <?php 
  if (!isset($_SESSION['login'])) : ?>
     <style>
         .container::before {
