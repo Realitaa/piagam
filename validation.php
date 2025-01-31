@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pass = trim($_POST['password']); // Password tidak perlu difilter, tetap aman
 
     if (empty($user) || empty($pass)) {
-        header("Location: login.php?error=Form Belum Lengkap!!");
+        header("Location: login.php?error=Form Belum Lengkap");
         exit();
     }
 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ./index.php');
         exit();
     } else {
-        header("Location: login.php?error=Username dan Password anda Salah!!!");
+        header("Location: login.php?error=Username dan Password anda Salah");
         exit();
     }
 
