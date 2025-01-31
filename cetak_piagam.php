@@ -176,7 +176,28 @@
 
         <button class="print-btn" onclick="window.print()">Print</button>
     </body>
+    <script>
+        window.onbeforeprint = function() {
+            let watermark = document.createElement("img");
+            watermark.src = "assets/img/valid-stemp.png";
+            watermark.style.position = "absolute";
+            watermark.style.top = "50%";
+            watermark.style.left = "50%";
+            watermark.style.transform = "translate(-50%, -50%) rotate(-15deg)";
+            watermark.style.width = "678px";
+            watermark.style.height = "255px";
+            watermark.style.opacity = "0.5";
+            watermark.style.zIndex = "-1";
+            
+            document.body.appendChild(watermark);
+        };
 
+        window.onafterprint = function() {
+            let watermarks = document.querySelectorAll("img[src='assets/img/valid-stemp.png']");
+            watermarks.forEach(wm => wm.remove());
+        };
+
+    </script>
     </html>
 
 <?php
