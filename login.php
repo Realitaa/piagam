@@ -122,48 +122,17 @@
                 <center><h3 class="panel-title"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> LOGIN PETUGAS</h3></center>
             </div>
             <div class="panel-body">
-				<?php 
-				if($_SERVER['REQUEST_METHOD']=='POST'){
-					$user	= $_POST['username'];
-					$pass	= $_POST['password'];
-					$p		= md5($pass);
-					if($user=='' || $pass==''){
-						?>
-						<div class="alert alert-warning alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <?php
-						  echo "<strong>Error!</strong> Form Belum Lengkap!!";
-						  ?>
-						</div>
-						<?php
-					}else{
-						include "koneksi.php";
-						$sqlLogin = mysqli_query($konek, "SELECT * FROM admin WHERE username='$user' AND password='$p'");
-						$jml=mysqli_num_rows($sqlLogin);
-						$d=mysqli_fetch_array($sqlLogin);
-						if($jml > 0){
-							session_start();
-							$_SESSION['login']		= TRUE;
-							$_SESSION['id']			= $d['idadmin'];
-							$_SESSION['username']	= $d['username'];
-							$_SESSION['namalengkap']= $d['namalengkap'];
-							
-							header('Location:./index.php');
-						}else{
-						?>
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <?php
-							  echo "<strong>Error!</strong> Username dan Password anda Salah!!!";
-							  ?>
-                    </div>
-						<?php
-						}
-						
-					}
-				}
-				?>
-
+            <?php 
+                if(isset($_GET['error'])){
+                    $error = $_GET['error'];
+                        ?>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <strong>Error!</strong> <?php echo $error; ?>
+                        </div>
+                        <?php
+                }
+                ?>
 
                 <form method="post" action="validation.php" role="form">
                     <div class="form-group">
