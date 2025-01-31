@@ -1,6 +1,7 @@
 <?php include "header.php"; ?>
+
 <div class="container">
-	<div class="panel panel-primary">
+	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<h3 class="panel-title"><span class="glyphicon glyphicon-home"></span> HOME </h3>
 		</div>
