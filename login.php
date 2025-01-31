@@ -16,21 +16,103 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/style.css" rel="stylesheet">
+	<style>
+		body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
 
+.navbar {
+    background-color: #3498db;
+    border: none;
+    margin-bottom: 150px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 2000px;
+}
+
+.panel {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.panel-primary .panel-heading {
+    background-color: #3498db;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.panel-danger .panel-heading {
+    background-color: #e74c3c;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.form-control {
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-primary, .btn-danger {
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+    opacity: 0.9;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 0px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.alert {
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+	</style>
 </head>
 <body>
 <nav class="navbar navbar-default">
-  <div class="container">
+  <div class="col-md-5 col-md-offset-5">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="./">Aplikasi Piagam</a>
+    </button>
+    <a class="navbar-brand" href="./">Aplikasi Piagam</a>
     </div>
-  </div>
+	</div>
 </nav>
 
 <div class="container">
