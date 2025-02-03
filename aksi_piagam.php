@@ -27,7 +27,30 @@ if(isset($_GET['act'])){
 				header('location:data_piagam.php');
 			}
 		}
-	} // akhir proses simpan data
+	} else if ($_GET['act']=='delete'){
+	    $id = $_GET['id'];
+	        
+	    if ($id) {
+	        $hapus = mysqli_query($konek, "DELETE FROM dpiagam WHERE id = $id");
+	        if ($hapus) {
+	            echo '<script>alert("Data berhasil di hapus")</script>';
+	            header('location:data_piagam.php');
+	        }
+	    } else {
+	        header('location:data_piagam.php');
+	    }
+	} else if ($_GET['act'] == 'afterprint') {
+	    $id = $_POST['id'];
+
+		if ($id) {
+			$id = intval($id);
+
+			$update = mysqli_query($konek, "UPDATE dpiagam SET banyak_copy = banyak_copy + 1 WHERE id = $id");
+		} else {
+			header('Content-Type: application/json');
+			echo json_encode(['status' => 'error', 'message' => 'Gagal menambahkan jumlah cetak']);		
+		}
+	}
 
 	else{
 		header('location:data_piagam.php');

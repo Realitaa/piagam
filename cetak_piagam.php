@@ -6,6 +6,10 @@
     } else {
         $style = ''; 
     }
+
+    if (!($_GET['id'])) {
+        header('location:data_sertifikat.php');
+    }
 ?>
 
     <!DOCTYPE html>
@@ -176,6 +180,8 @@
 
         <button class="print-btn" onclick="window.print()">Print</button>
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         window.onbeforeprint = function() {
             let watermark = document.createElement("img");
@@ -197,6 +203,21 @@
             watermarks.forEach(wm => wm.remove());
         };
 
+        window.addEventListener("afterprint", function() {
+            $.ajax({
+                url: 'aksi_piagam.php?act=afterprint',
+                type: 'POST',
+                data: {
+                    id : <?php echo $_GET['id']; ?>
+                },
+                success: function(response) {
+                    // console.log('banyak copy sudah diperbarui');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error: ' + error);
+                }
+            });
+        });
     </script>
     </html>
 

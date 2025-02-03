@@ -40,10 +40,12 @@ while ($d = mysqli_fetch_array($sql)) {
         <td>$tanggal</td>
         <td>$d[nama_instansi]</td>
         <td>$d[no_piagam]</td>
+        <td>$d[banyak_copy]</td>
         <td align='center'>
             <a class='btn btn-success btn-sm' href='cetak_piagam.php?id=$d[id]' 
             target='_blank'>Cetak</a>
             $logo
+            <a href='aksi_piagam.php?act=delete&id=$d[id]' class='btn btn-danger btn-sm'>Hapus</a>
         </td>
     </tr>";
     $no++;

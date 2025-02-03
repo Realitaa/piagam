@@ -34,6 +34,7 @@
                             <th>Tanggal</th>
                             <th>Nama Instansi</th>
                             <th>Nomor Piagam</th>
+                            <th>Banyak Copy</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
