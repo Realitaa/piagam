@@ -36,6 +36,7 @@
                 border: 1px solid #ddd;
                 position: relative;
                 overflow: hidden;
+                z-index: 0;
             }
 
             .container > * {
@@ -178,7 +179,12 @@
             </div>
         </div>
 
-        <button class="print-btn" onclick="window.print()">Print</button>
+        <?php
+        ob_start();
+        if (isset($_SESSION['login'])) {
+            echo '<button class="print-btn" onclick="window.print()">Print</button>';
+        }
+        ?>
     </body>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
