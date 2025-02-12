@@ -34,7 +34,7 @@ if(isset($_GET['act'])){
 	    if ($id) {
 	        $hapus = mysqli_query($konek, "DELETE FROM dpiagam WHERE id = $id");
 	        if ($hapus) {
-	            echo '<script>alert("Data berhasil di hapus")</script>';
+	            // echo '<script>alert("Data berhasil di hapus")</script>';
 	            header('location:data_piagam.php');
 	        }
 	    } else {
