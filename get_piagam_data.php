@@ -23,7 +23,7 @@ if (!empty($search)) {
     $query .= " AND (nama_instansi LIKE '%$search%' OR no_piagam LIKE '%$search%' )";
 }
 
-$query .= " ORDER BY id ASC"; // Urutkan berdasarkan ID
+$query .= " ORDER BY id DESC"; // Urutkan berdasarkan ID secara DESC
 
 $sql = mysqli_query($konek, $query);
 $no = 1;
