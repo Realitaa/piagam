@@ -21,6 +21,10 @@
 							<td><div class="col-md-6"><input class="form-control" type="text" name="event" placeholder="Dalam Rangka Kegiatan Donor Darah Suka Rela" /></div></td>
 						</tr>
 						<tr>
+							<td width="160px">Tanggal</td>
+							<td><div class="col-md-6"><input class="form-control" type="text" name="tanggal" id="tanggal"/></div></td>
+						</tr>
+						<tr>
 							<td>No. Piagam</td>
 							<td>
 								<div class="col-md-6">
@@ -115,8 +119,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
-	flatpickr("#tgl", {
+	flatpickr("#tanggal", {
     	dateFormat: "Y-m-d",
+		defaultDate: new Date(),
 	});
 
 	// Mendapatkan elemen HTML
