@@ -14,14 +14,15 @@ if(isset($_GET['act'])){
 		$nama 	= $_POST['nama'];
 		$nopiagam = $_POST['nopiagam'];
 		$event	= $_POST['event'];
+		$tanggal	= $_POST['tanggal'];
 		$logo	= $_POST['logo'];
 		
 		if($nama=='' || $nopiagam==''){
 			header('location:data_piagam.php');
 		}else{			
 			//proses simpan data admin
-			$simpan = mysqli_query($konek, "INSERT INTO dpiagam(nama_instansi, no_piagam, event, logo) 
-							VALUES ('$nama', '$nopiagam','$event', '$logo')");
+			$simpan = mysqli_query($konek, "INSERT INTO dpiagam(tanggal, nama_instansi, no_piagam, event, logo) 
+							VALUES ('$tanggal', '$nama', '$nopiagam','$event', '$logo')");
 
 			if ($simpan) {
 				header('location:data_piagam.php');
